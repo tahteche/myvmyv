@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Vote My Voice</title>
+    <style media="screen">
+
+    </style>
+  </head>
+  <body>
+    <div id="message">
+      <h1>My Vote My Voice</h1>
+      <p>Please sign in to share your opinion</p>
+      <h3>Login</h3>
+      <p> Email: <input id="txtEmail" type="text" name="username"> </p>
+      <p> Password: <input id="txtPassword" type="password" name="password"> </p>
+      <p> 
+        <button id="btnLogin" class="btn">Log in</button>
+        <button id="btnSignUp" class="btn">Sign Up</button>
+        <button id="btnLogout" class="btn">Log out</button>
+      </p>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDRfKmS7RSYkcGCoIgXJgGSjZEFQCmSGfU",
+        authDomain: "myvmyv-1a153.firebaseapp.com",
+        databaseURL: "https://myvmyv-1a153.firebaseio.com",
+        storageBucket: "myvmyv-1a153.appspot.com",
+        messagingSenderId: "244917037751"
+      };
+      firebase.initializeApp(config);
+
+
+    </script>
+    <script src="auth.js"></script>
+  </body>
+</html>
