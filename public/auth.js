@@ -20,7 +20,7 @@ btnLogin.addEventListener('click', e => {
 
 btnSignup.addEventListener('click', e => {
 	//Get email and password
-	//TODO: check 4 rel email
+	//TODO: check 4 real email
 	var email = txtEmail.value;
 	var pass = txtPassword.value; 
 	var auth = firebase.auth();
@@ -29,4 +29,17 @@ btnSignup.addEventListener('click', e => {
 
 	var promise = auth.createUserWithEmailAndPassword(email, pass);
 	promise.catch(e => console.log(e.message));
+});
+
+btnLogout.addEventListener('click', e => {
+	firebase.auth().signOut();
+});
+
+//add a realtime listner for auth changes
+firebase.auth().onAuthStateChanged(firebaseUser => {
+	if(firebaseUser) {
+		console.log(firebaseUser);
+	} else {
+		console.log('not logged in');
+	}
 });
